@@ -1,0 +1,12 @@
+<p>
+  Add your name
+</p>
+<form (submit)="onSubmit()">
+  <h4 class="col">*Name:
+    <input type="text" class=" form-control" name="username" required minlength="4" maxlength="24" [(ngModel)]="survey.username" #username='ngModel' /></h4>
+  <p class="text-danger" *ngIf="!username.valid && username.dirty">username is required (4 char min) </p>
+
+
+  <input [disabled]="!username.valid" disabled=true type="submit" />
+
+</form>

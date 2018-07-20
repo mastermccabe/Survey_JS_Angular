@@ -1,0 +1,24 @@
+<form (submit)="onSubmit(formdata)" name="formdata" #formdata='ngForm'>
+  <h4 class="col">*Question:
+  <input type="text" class=" form-control" name="question" required minlength="8" maxlength="24" [(ngModel)]="survey.question" #question='ngModel' /></h4>
+  <p class="text-danger" *ngIf="!question.valid && question.dirty">Question is req (8 char min) </p>
+  <h4 class="col">*option 1:
+    <input type="text" class=" form-control" name="option_1" required minlength="3" maxlength="24" [(ngModel)]="survey.option_1" #option1='ngModel' /></h4>
+  <p class="text-danger" *ngIf="!option1.valid && option1.dirty">option1 req</p>
+  <h4 class="col">*option 2:
+    <input type="text" class=" form-control" name="option_2" required minlength="3" maxlength="24" [(ngModel)]="survey.option_2" #option2='ngModel' /></h4>
+  <p class="text-danger" *ngIf="!option2.valid && option2.dirty">option1 req</p>
+  <h4 class="col">*option 3:
+    <input type="text" class=" form-control" name="option_3" required minlength="3" maxlength="24" [(ngModel)]="survey.option_3" #option3='ngModel' /></h4>
+  <p class="text-danger" *ngIf="!option3.valid && option3.dirty">option1 req</p>
+  <h4 class="col">*option 4:
+    <input type="text" class=" form-control" name="option_4" required minlength="3" maxlength="24" [(ngModel)]="survey.option_4" #option4='ngModel' /></h4>
+  <p class="text-danger" *ngIf="!option4.valid && option4.dirty">option1 req</p>
+
+  <!-- <button type="button" *ngIf="!formdata.valid" class=" btn btn-primary ">Submit</button> -->
+  <button type="submit" [disabled]="!formdata.valid" class="btn btn-primary">Submit</button>
+  <p class="text-danger" *ngIf="!formdata.valid">Please fill out all fields</p>
+  <p class="text-success" *ngIf="formdata.valid">Form Valid! </p>
+</form>
+
+//add to find on github
